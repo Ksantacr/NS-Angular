@@ -4,6 +4,7 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NgModule } from "@angular/core";
 // App
 import { PROVIDERS } from './services';
+import { PIPES } from './pipes';
 
 @NgModule({
     imports: [
@@ -11,8 +12,10 @@ import { PROVIDERS } from './services';
     ],
     providers: [...PROVIDERS],
     exports: [
-        NativeScriptModule
-    ]
+        NativeScriptModule,
+        ...PIPES
+    ],
+    declarations: [...PIPES]
 })
 export class CoreModule {
 

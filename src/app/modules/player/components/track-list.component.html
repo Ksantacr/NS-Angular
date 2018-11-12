@@ -1,4 +1,4 @@
-<ListView [items]="playerService.tracks">
+<ListView [items]="playerService.tracks | orderBy: 'order' ">
     <ng-template let-track="item">
       <GridLayout rows="auto" columns="75, *, 100">
           <Button text="Record" (tap)="record(track)" row="0" col="0"></Button>

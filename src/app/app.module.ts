@@ -1,7 +1,5 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./modules/core/core.module";
 import { PlayerModule } from "./modules/player/player.module";
@@ -13,24 +11,12 @@ import { PlayerModule } from "./modules/player/player.module";
 // import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
+    bootstrap: [AppComponent],
     imports: [
-        NativeScriptModule,
-        AppRoutingModule,
         CoreModule,
         PlayerModule
     ],
-    declarations: [
-        AppComponent,
-    ],
-    providers: [
-        
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    declarations: [ AppComponent,]
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app

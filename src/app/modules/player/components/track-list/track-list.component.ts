@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { LogService, DialogService, AuthService } from "../../core/services";
-import { PlayerService } from "../services";
-import { ITrack } from "../../core/models/track.model";
+import { LogService, DialogService, AuthService } from "../../../core/services";
+import { PlayerService } from "../../services";
+import { ITrack } from "../../../core/models/track.model";
 
 @Component({
-    moduleId: module.id,
     selector: 'track-list',
-    templateUrl : 'track-list.component.html'
+    moduleId: module.id,
+    templateUrl : './track-list.component.html'
 })
 export class TrackListComponent {
 

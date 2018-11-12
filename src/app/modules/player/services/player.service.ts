@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 
 // App
 import { ITrack } from "../../core/models/track.model";
-import { initTransferState } from "@angular/platform-browser/src/browser/transfer_state";
 @Injectable()
 export class PlayerService {
 
@@ -11,7 +10,11 @@ export class PlayerService {
     public tracks: Array<ITrack>;
 
     constructor() {
-        this.tracks = [];
+        this.tracks = [
+            {name: "Guitar"},
+            {name: "Vocals"},
+        ];
+            
     }
 
     public play(index: number):void {

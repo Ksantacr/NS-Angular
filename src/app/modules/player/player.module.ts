@@ -1,17 +1,18 @@
-// Nativescript
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 // Angular
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NgModule } from "@angular/core";
+// App
 import { PROVIDERS } from "./services";
 import { COMPONENTS } from "./components/";
 import { CoreModule } from "../core/core.module";
 
 
 @NgModule({
-    imports: [CoreModule],
-    schemas: [NO_ERRORS_SCHEMA],
+    imports:[
+        CoreModule
+    ],
     providers: [...PROVIDERS],
-    declarations: [...COMPONENTS]
+    declarations: [...COMPONENTS],
+    exports: [...COMPONENTS]
 })
 export class PlayerModule {
 

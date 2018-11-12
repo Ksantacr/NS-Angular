@@ -7,6 +7,7 @@ import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 import { CoreModule } from "./modules/core/core.module";
+import { PlayerModule } from "./modules/player/player.module";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -21,7 +22,8 @@ import { CoreModule } from "./modules/core/core.module";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        CoreModule
+        CoreModule,
+        PlayerModule
     ],
     declarations: [
         AppComponent,

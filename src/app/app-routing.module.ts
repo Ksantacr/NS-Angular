@@ -5,7 +5,7 @@ import { Routes } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/mixer/home',
+        redirectTo: 'mixer/home',
         pathMatch: 'full'
     },
     {
@@ -16,9 +16,7 @@ const routes: Routes = [
         path: 'record',
         loadChildren: './modules/recorder/recorder.module#RecorderModule',
         //canLoad: [AuthGuard]
-        
     }
-        
 ];
 
 @NgModule({

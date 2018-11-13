@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { NativeScriptRouterModule } from 'nativescript-angular/router';
+import { NgModule, NgModuleFactoryLoader } from '@angular/core';
+import { NativeScriptRouterModule, NSModuleFactoryLoader } from 'nativescript-angular/router';
 import { Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -10,11 +10,13 @@ const routes: Routes = [
     },
     {
         path: 'mixer',
-        loadChildren: () => require('./modules/mixer/mixer.module')['MixerModule']
+        loadChildren:  './modules/mixer/mixer.module#MixerModule'
     },
     {
         path: 'record',
-        loadChildren: () => require('./modules/recorder/recorder.module')['RecorderModule']
+        loadChildren: './modules/recorder/recorder.module#RecorderModule',
+        //canLoad: [AuthGuard]
+        
     }
         
 ];
@@ -22,6 +24,13 @@ const routes: Routes = [
 @NgModule({
     imports: [
     NativeScriptRouterModule.forRoot(routes)
+    ],
+    providers: [
+        //AuthGuard,
+        {
+        provide: NgModuleFactoryLoader,
+        useClass: NSModuleFactoryLoader
+        }
     ],
     exports: [
     NativeScriptRouterModule

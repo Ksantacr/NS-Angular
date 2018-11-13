@@ -1,10 +1,10 @@
-<ListView [items]="playerService.tracks | orderBy: 'order' ">
+<ListView [items]="playerService.tracks | orderBy: 'order' " class="list-group">
     <ng-template let-track="item">
-      <GridLayout rows="auto" columns="auto, *, 100">
-          <Button text="Record" (tap)="record(track)" row="0" col="0"></Button>
-          <Label [text]="track.name" row="0" col="1"></Label>
+      <GridLayout rows="auto" columns="auto, *, 100" class="list-group-item">
+          <Button text="Record" (tap)="record(track)" row="0" col="0" class="c-ruby"></Button>
+          <Label [text]="track.name" row="0" col="1" class="h2"></Label>
           <!-- <Switch [checked]="track.solo" row="0" col="2"></Switch>  -->
-          <Switch [checked]="true" row="0" col="2"></Switch> 
+          <Switch [checked]="true" row="0" col="2" class="switch"></Switch> 
       </GridLayout>
     </ng-template>
 </ListView>
